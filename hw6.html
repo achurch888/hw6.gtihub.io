@@ -1,4 +1,16 @@
-{
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+  <b> Alex Churchill</b>
+  <br></br>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
   "config": {
     "view": {"continuousWidth": 300, "continuousHeight": 300},
     "axis": {"labelFontSize": 15, "titleFontSize": 15},
@@ -37,7 +49,7 @@
     {
       "mark": {"type": "rule", "color": "#aaa"},
       "encoding": {"x": {"field": "year", "type": "ordinal"}},
-      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+      "transform": [{"filter": {"param": "param_30", "empty": false}}]
     },
     {
       "mark": {"type": "circle"},
@@ -54,7 +66,7 @@
           "type": "nominal"
         },
         "opacity": {
-          "condition": {"param": "param_32", "value": 1, "empty": false},
+          "condition": {"param": "param_30", "value": 1, "empty": false},
           "value": 0
         },
         "x": {
@@ -70,7 +82,7 @@
           "type": "quantitative"
         }
       },
-      "name": "view_29"
+      "name": "view_27"
     },
     {
       "mark": {
@@ -107,7 +119,7 @@
           "type": "quantitative"
         }
       },
-      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+      "transform": [{"filter": {"param": "param_30", "empty": false}}]
     },
     {
       "mark": {"type": "text", "align": "left", "dx": 5, "dy": -15},
@@ -137,21 +149,21 @@
           "type": "quantitative"
         }
       },
-      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+      "transform": [{"filter": {"param": "param_30", "empty": false}}]
     }
   ],
   "data": {"name": "data-da13fb90afddcd3e27abf275a6af2825"},
   "height": 400,
   "params": [
     {
-      "name": "param_32",
+      "name": "param_30",
       "select": {
         "type": "point",
         "encodings": ["x"],
         "nearest": true,
         "on": "mouseover"
       },
-      "views": ["view_29"]
+      "views": ["view_27"]
     }
   ],
   "width": 700,
@@ -972,4 +984,11 @@
       }
     ]
   }
-}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+  <br>
+  <b>Explanation of Encodings and Effectiveness</b>
+  <p>This is a new visualization using green house gas data from my homework 4. This normalized area chart shows the percent make up of green house gases from four major pollutants from 1990 to 2018. Emissions are encoded as y, the year as x, and the type of emission is encoded as color. We are most interested in the emission levels, so that is the y encoding. We are interested in levels over time, so that is the x encoding. We are also interested in how much each pollutant is contributing to the total, so that is the color encoding. The normalized areas show us each emission as a percentage of the total. The interactive portion is a multi-line tooltip, which shows the exact percentage each year for each green house gas source. This makes the plot more effective because it reduces eye movement between the x axis and the area boundaries as the year increases, decreasing cognitive load. The viewer does not have to look left to reference the scale is they need it towards the right side of the plot. They also do not have to try and subtract the top of an area from the bottom to figure out exact percentages. In addition, this plot increases the data-ink ratio, since we are adding much more precise measurements in the form of exact percentages. Additionally, this chart is easy to read, since the multi-line percentages have been placed to be against the background color above, while still being obviously connected to the category below. I have also picked a color scheme where the color above will be easily distinguishable from the category below. For example, there is no yellow text shown against an orange background, or light blue text against a dark blue background. The text has also been enlarged for easy viewing. Overall, this interaction preserves the original function of the area chart, and adds more precision without hiding any data behind an interaction. </p>
+</body>
+</html>
