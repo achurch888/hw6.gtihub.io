@@ -1,0 +1,975 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axis": {"labelFontSize": 15, "titleFontSize": 15},
+    "legend": {"labelFontSize": 15, "titleFontSize": 15},
+    "text": {"fontSize": 20}
+  },
+  "layer": [
+    {
+      "mark": {"type": "area"},
+      "encoding": {
+        "color": {
+          "field": "variable",
+          "legend": {
+            "direction": "horizontal",
+            "legendY": -70,
+            "orient": "none",
+            "title": "Green House Gas"
+          },
+          "scale": {"scheme": "category10"},
+          "type": "nominal"
+        },
+        "x": {
+          "axis": {"labelAngle": -45},
+          "field": "year",
+          "title": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "sub_totals",
+          "stack": "normalize",
+          "title": "Green House Gas Emissions",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "#aaa"},
+      "encoding": {"x": {"field": "year", "type": "ordinal"}},
+      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+    },
+    {
+      "mark": {"type": "circle"},
+      "encoding": {
+        "color": {
+          "field": "variable",
+          "legend": {
+            "direction": "horizontal",
+            "legendY": -70,
+            "orient": "none",
+            "title": "Green House Gas"
+          },
+          "scale": {"scheme": "category10"},
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {"param": "param_32", "value": 1, "empty": false},
+          "value": 0
+        },
+        "x": {
+          "axis": {"labelAngle": -45},
+          "field": "year",
+          "title": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "sub_totals",
+          "stack": "normalize",
+          "title": "Green House Gas Emissions",
+          "type": "quantitative"
+        }
+      },
+      "name": "view_29"
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -15,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "variable",
+          "legend": {
+            "direction": "horizontal",
+            "legendY": -70,
+            "orient": "none",
+            "title": "Green House Gas"
+          },
+          "scale": {"scheme": "category10"},
+          "type": "nominal"
+        },
+        "text": {"field": "perc", "type": "quantitative"},
+        "x": {
+          "axis": {"labelAngle": -45},
+          "field": "year",
+          "title": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "sub_totals",
+          "stack": "normalize",
+          "title": "Green House Gas Emissions",
+          "type": "quantitative"
+        }
+      },
+      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": -15},
+      "encoding": {
+        "color": {
+          "field": "variable",
+          "legend": {
+            "direction": "horizontal",
+            "legendY": -70,
+            "orient": "none",
+            "title": "Green House Gas"
+          },
+          "scale": {"scheme": "category10"},
+          "type": "nominal"
+        },
+        "text": {"field": "perc", "type": "quantitative"},
+        "x": {
+          "axis": {"labelAngle": -45},
+          "field": "year",
+          "title": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "sub_totals",
+          "stack": "normalize",
+          "title": "Green House Gas Emissions",
+          "type": "quantitative"
+        }
+      },
+      "transform": [{"filter": {"param": "param_32", "empty": false}}]
+    }
+  ],
+  "data": {"name": "data-da13fb90afddcd3e27abf275a6af2825"},
+  "height": 400,
+  "params": [
+    {
+      "name": "param_32",
+      "select": {
+        "type": "point",
+        "encodings": ["x"],
+        "nearest": true,
+        "on": "mouseover"
+      },
+      "views": ["view_29"]
+    }
+  ],
+  "width": 700,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.14.1.json",
+  "datasets": {
+    "data-da13fb90afddcd3e27abf275a6af2825": [
+      {
+        "year": 1990,
+        "variable": "coal_co2",
+        "sub_totals": 7642.483,
+        "totals": 21097.599000000002,
+        "perc": 0.36
+      },
+      {
+        "year": 1990,
+        "variable": "gas_co2",
+        "sub_totals": 3113.026,
+        "totals": 21097.599000000002,
+        "perc": 0.15
+      },
+      {
+        "year": 1990,
+        "variable": "methane",
+        "sub_totals": 3543.2,
+        "totals": 21097.599000000002,
+        "perc": 0.17
+      },
+      {
+        "year": 1990,
+        "variable": "oil_co2",
+        "sub_totals": 6798.89,
+        "totals": 21097.599000000002,
+        "perc": 0.32
+      },
+      {
+        "year": 1991,
+        "variable": "coal_co2",
+        "sub_totals": 7537.157,
+        "totals": 20916.976000000002,
+        "perc": 0.36
+      },
+      {
+        "year": 1991,
+        "variable": "gas_co2",
+        "sub_totals": 3141.6940000000004,
+        "totals": 20916.976000000002,
+        "perc": 0.15
+      },
+      {
+        "year": 1991,
+        "variable": "methane",
+        "sub_totals": 3520.41,
+        "totals": 20916.976000000002,
+        "perc": 0.17
+      },
+      {
+        "year": 1991,
+        "variable": "oil_co2",
+        "sub_totals": 6717.715,
+        "totals": 20916.976000000002,
+        "perc": 0.32
+      },
+      {
+        "year": 1992,
+        "variable": "coal_co2",
+        "sub_totals": 7327.002,
+        "totals": 20498.999,
+        "perc": 0.36
+      },
+      {
+        "year": 1992,
+        "variable": "gas_co2",
+        "sub_totals": 3170.635,
+        "totals": 20498.999,
+        "perc": 0.15
+      },
+      {
+        "year": 1992,
+        "variable": "methane",
+        "sub_totals": 3474.15,
+        "totals": 20498.999,
+        "perc": 0.17
+      },
+      {
+        "year": 1992,
+        "variable": "oil_co2",
+        "sub_totals": 6527.2119999999995,
+        "totals": 20498.999,
+        "perc": 0.32
+      },
+      {
+        "year": 1993,
+        "variable": "coal_co2",
+        "sub_totals": 7372.883,
+        "totals": 20490.093,
+        "perc": 0.36
+      },
+      {
+        "year": 1993,
+        "variable": "gas_co2",
+        "sub_totals": 3214.9970000000003,
+        "totals": 20490.093,
+        "perc": 0.16
+      },
+      {
+        "year": 1993,
+        "variable": "methane",
+        "sub_totals": 3437.92,
+        "totals": 20490.093,
+        "perc": 0.17
+      },
+      {
+        "year": 1993,
+        "variable": "oil_co2",
+        "sub_totals": 6464.293,
+        "totals": 20490.093,
+        "perc": 0.32
+      },
+      {
+        "year": 1994,
+        "variable": "coal_co2",
+        "sub_totals": 7390.906999999999,
+        "totals": 20465.352,
+        "perc": 0.36
+      },
+      {
+        "year": 1994,
+        "variable": "gas_co2",
+        "sub_totals": 3196.402,
+        "totals": 20465.352,
+        "perc": 0.16
+      },
+      {
+        "year": 1994,
+        "variable": "methane",
+        "sub_totals": 3444.8,
+        "totals": 20465.352,
+        "perc": 0.17
+      },
+      {
+        "year": 1994,
+        "variable": "oil_co2",
+        "sub_totals": 6433.243,
+        "totals": 20465.352,
+        "perc": 0.31
+      },
+      {
+        "year": 1995,
+        "variable": "coal_co2",
+        "sub_totals": 7603.051,
+        "totals": 20821.487999999998,
+        "perc": 0.37
+      },
+      {
+        "year": 1995,
+        "variable": "gas_co2",
+        "sub_totals": 3269.9489999999996,
+        "totals": 20821.487999999998,
+        "perc": 0.16
+      },
+      {
+        "year": 1995,
+        "variable": "methane",
+        "sub_totals": 3453.68,
+        "totals": 20821.487999999998,
+        "perc": 0.17
+      },
+      {
+        "year": 1995,
+        "variable": "oil_co2",
+        "sub_totals": 6494.808,
+        "totals": 20821.487999999998,
+        "perc": 0.31
+      },
+      {
+        "year": 1996,
+        "variable": "coal_co2",
+        "sub_totals": 7768.652,
+        "totals": 21273.818,
+        "perc": 0.37
+      },
+      {
+        "year": 1996,
+        "variable": "gas_co2",
+        "sub_totals": 3395.058,
+        "totals": 21273.818,
+        "perc": 0.16
+      },
+      {
+        "year": 1996,
+        "variable": "methane",
+        "sub_totals": 3439.25,
+        "totals": 21273.818,
+        "perc": 0.16
+      },
+      {
+        "year": 1996,
+        "variable": "oil_co2",
+        "sub_totals": 6670.858,
+        "totals": 21273.818,
+        "perc": 0.31
+      },
+      {
+        "year": 1997,
+        "variable": "coal_co2",
+        "sub_totals": 7666.704,
+        "totals": 21104.4,
+        "perc": 0.36
+      },
+      {
+        "year": 1997,
+        "variable": "gas_co2",
+        "sub_totals": 3375.118,
+        "totals": 21104.4,
+        "perc": 0.16
+      },
+      {
+        "year": 1997,
+        "variable": "methane",
+        "sub_totals": 3350.01,
+        "totals": 21104.4,
+        "perc": 0.16
+      },
+      {
+        "year": 1997,
+        "variable": "oil_co2",
+        "sub_totals": 6712.567999999999,
+        "totals": 21104.4,
+        "perc": 0.32
+      },
+      {
+        "year": 1998,
+        "variable": "coal_co2",
+        "sub_totals": 7421.835,
+        "totals": 20883.375,
+        "perc": 0.36
+      },
+      {
+        "year": 1998,
+        "variable": "gas_co2",
+        "sub_totals": 3413.674,
+        "totals": 20883.375,
+        "perc": 0.16
+      },
+      {
+        "year": 1998,
+        "variable": "methane",
+        "sub_totals": 3346.69,
+        "totals": 20883.375,
+        "perc": 0.16
+      },
+      {
+        "year": 1998,
+        "variable": "oil_co2",
+        "sub_totals": 6701.1759999999995,
+        "totals": 20883.375,
+        "perc": 0.32
+      },
+      {
+        "year": 1999,
+        "variable": "coal_co2",
+        "sub_totals": 7503.745000000001,
+        "totals": 21124.935,
+        "perc": 0.36
+      },
+      {
+        "year": 1999,
+        "variable": "gas_co2",
+        "sub_totals": 3483.505,
+        "totals": 21124.935,
+        "perc": 0.16
+      },
+      {
+        "year": 1999,
+        "variable": "methane",
+        "sub_totals": 3332.77,
+        "totals": 21124.935,
+        "perc": 0.16
+      },
+      {
+        "year": 1999,
+        "variable": "oil_co2",
+        "sub_totals": 6804.915,
+        "totals": 21124.935,
+        "perc": 0.32
+      },
+      {
+        "year": 2000,
+        "variable": "coal_co2",
+        "sub_totals": 7767.421,
+        "totals": 21524.174,
+        "perc": 0.36
+      },
+      {
+        "year": 2000,
+        "variable": "gas_co2",
+        "sub_totals": 3587.616,
+        "totals": 21524.174,
+        "perc": 0.17
+      },
+      {
+        "year": 2000,
+        "variable": "methane",
+        "sub_totals": 3326.48,
+        "totals": 21524.174,
+        "perc": 0.15
+      },
+      {
+        "year": 2000,
+        "variable": "oil_co2",
+        "sub_totals": 6842.657,
+        "totals": 21524.174,
+        "perc": 0.32
+      },
+      {
+        "year": 2001,
+        "variable": "coal_co2",
+        "sub_totals": 7775.745,
+        "totals": 21582.124,
+        "perc": 0.36
+      },
+      {
+        "year": 2001,
+        "variable": "gas_co2",
+        "sub_totals": 3587.526,
+        "totals": 21582.124,
+        "perc": 0.17
+      },
+      {
+        "year": 2001,
+        "variable": "methane",
+        "sub_totals": 3321.88,
+        "totals": 21582.124,
+        "perc": 0.15
+      },
+      {
+        "year": 2001,
+        "variable": "oil_co2",
+        "sub_totals": 6896.973,
+        "totals": 21582.124,
+        "perc": 0.32
+      },
+      {
+        "year": 2002,
+        "variable": "coal_co2",
+        "sub_totals": 8170.916,
+        "totals": 22035.487999999998,
+        "perc": 0.37
+      },
+      {
+        "year": 2002,
+        "variable": "gas_co2",
+        "sub_totals": 3639.203,
+        "totals": 22035.487999999998,
+        "perc": 0.17
+      },
+      {
+        "year": 2002,
+        "variable": "methane",
+        "sub_totals": 3334.95,
+        "totals": 22035.487999999998,
+        "perc": 0.15
+      },
+      {
+        "year": 2002,
+        "variable": "oil_co2",
+        "sub_totals": 6890.419,
+        "totals": 22035.487999999998,
+        "perc": 0.31
+      },
+      {
+        "year": 2003,
+        "variable": "coal_co2",
+        "sub_totals": 8885.463,
+        "totals": 23045.689,
+        "perc": 0.39
+      },
+      {
+        "year": 2003,
+        "variable": "gas_co2",
+        "sub_totals": 3727.763,
+        "totals": 23045.689,
+        "perc": 0.16
+      },
+      {
+        "year": 2003,
+        "variable": "methane",
+        "sub_totals": 3369.83,
+        "totals": 23045.689,
+        "perc": 0.15
+      },
+      {
+        "year": 2003,
+        "variable": "oil_co2",
+        "sub_totals": 7062.633,
+        "totals": 23045.689,
+        "perc": 0.31
+      },
+      {
+        "year": 2004,
+        "variable": "coal_co2",
+        "sub_totals": 9148.155,
+        "totals": 23630.814,
+        "perc": 0.39
+      },
+      {
+        "year": 2004,
+        "variable": "gas_co2",
+        "sub_totals": 3789.46,
+        "totals": 23630.814,
+        "perc": 0.16
+      },
+      {
+        "year": 2004,
+        "variable": "methane",
+        "sub_totals": 3441.87,
+        "totals": 23630.814,
+        "perc": 0.15
+      },
+      {
+        "year": 2004,
+        "variable": "oil_co2",
+        "sub_totals": 7251.329,
+        "totals": 23630.814,
+        "perc": 0.31
+      },
+      {
+        "year": 2005,
+        "variable": "coal_co2",
+        "sub_totals": 9748.988000000001,
+        "totals": 24333.800000000003,
+        "perc": 0.4
+      },
+      {
+        "year": 2005,
+        "variable": "gas_co2",
+        "sub_totals": 3825.075,
+        "totals": 24333.800000000003,
+        "perc": 0.16
+      },
+      {
+        "year": 2005,
+        "variable": "methane",
+        "sub_totals": 3476.35,
+        "totals": 24333.800000000003,
+        "perc": 0.14
+      },
+      {
+        "year": 2005,
+        "variable": "oil_co2",
+        "sub_totals": 7283.387000000001,
+        "totals": 24333.800000000003,
+        "perc": 0.3
+      },
+      {
+        "year": 2006,
+        "variable": "coal_co2",
+        "sub_totals": 10281.948,
+        "totals": 24944.679,
+        "perc": 0.41
+      },
+      {
+        "year": 2006,
+        "variable": "gas_co2",
+        "sub_totals": 3875.449,
+        "totals": 24944.679,
+        "perc": 0.16
+      },
+      {
+        "year": 2006,
+        "variable": "methane",
+        "sub_totals": 3523.92,
+        "totals": 24944.679,
+        "perc": 0.14
+      },
+      {
+        "year": 2006,
+        "variable": "oil_co2",
+        "sub_totals": 7263.361999999999,
+        "totals": 24944.679,
+        "perc": 0.29
+      },
+      {
+        "year": 2007,
+        "variable": "coal_co2",
+        "sub_totals": 10752.956000000002,
+        "totals": 25574.374000000003,
+        "perc": 0.42
+      },
+      {
+        "year": 2007,
+        "variable": "gas_co2",
+        "sub_totals": 4023.5870000000004,
+        "totals": 25574.374000000003,
+        "perc": 0.16
+      },
+      {
+        "year": 2007,
+        "variable": "methane",
+        "sub_totals": 3558.81,
+        "totals": 25574.374000000003,
+        "perc": 0.14
+      },
+      {
+        "year": 2007,
+        "variable": "oil_co2",
+        "sub_totals": 7239.021,
+        "totals": 25574.374000000003,
+        "perc": 0.28
+      },
+      {
+        "year": 2008,
+        "variable": "coal_co2",
+        "sub_totals": 11070.823,
+        "totals": 25760.265,
+        "perc": 0.43
+      },
+      {
+        "year": 2008,
+        "variable": "gas_co2",
+        "sub_totals": 4088.3160000000003,
+        "totals": 25760.265,
+        "perc": 0.16
+      },
+      {
+        "year": 2008,
+        "variable": "methane",
+        "sub_totals": 3554.32,
+        "totals": 25760.265,
+        "perc": 0.14
+      },
+      {
+        "year": 2008,
+        "variable": "oil_co2",
+        "sub_totals": 7046.8060000000005,
+        "totals": 25760.265,
+        "perc": 0.27
+      },
+      {
+        "year": 2009,
+        "variable": "coal_co2",
+        "sub_totals": 10872.087,
+        "totals": 25073.345,
+        "perc": 0.43
+      },
+      {
+        "year": 2009,
+        "variable": "gas_co2",
+        "sub_totals": 3911.5699999999997,
+        "totals": 25073.345,
+        "perc": 0.16
+      },
+      {
+        "year": 2009,
+        "variable": "methane",
+        "sub_totals": 3540.2599999999998,
+        "totals": 25073.345,
+        "perc": 0.14
+      },
+      {
+        "year": 2009,
+        "variable": "oil_co2",
+        "sub_totals": 6749.428,
+        "totals": 25073.345,
+        "perc": 0.27
+      },
+      {
+        "year": 2010,
+        "variable": "coal_co2",
+        "sub_totals": 11675.456999999999,
+        "totals": 26449.589999999997,
+        "perc": 0.44
+      },
+      {
+        "year": 2010,
+        "variable": "gas_co2",
+        "sub_totals": 4218.507,
+        "totals": 26449.589999999997,
+        "perc": 0.16
+      },
+      {
+        "year": 2010,
+        "variable": "methane",
+        "sub_totals": 3641.92,
+        "totals": 26449.589999999997,
+        "perc": 0.14
+      },
+      {
+        "year": 2010,
+        "variable": "oil_co2",
+        "sub_totals": 6913.706,
+        "totals": 26449.589999999997,
+        "perc": 0.26
+      },
+      {
+        "year": 2011,
+        "variable": "coal_co2",
+        "sub_totals": 12345.728000000001,
+        "totals": 27250.016000000003,
+        "perc": 0.45
+      },
+      {
+        "year": 2011,
+        "variable": "gas_co2",
+        "sub_totals": 4286.455,
+        "totals": 27250.016000000003,
+        "perc": 0.16
+      },
+      {
+        "year": 2011,
+        "variable": "methane",
+        "sub_totals": 3732.34,
+        "totals": 27250.016000000003,
+        "perc": 0.14
+      },
+      {
+        "year": 2011,
+        "variable": "oil_co2",
+        "sub_totals": 6885.493,
+        "totals": 27250.016000000003,
+        "perc": 0.25
+      },
+      {
+        "year": 2012,
+        "variable": "coal_co2",
+        "sub_totals": 12361.858,
+        "totals": 27353.408,
+        "perc": 0.45
+      },
+      {
+        "year": 2012,
+        "variable": "gas_co2",
+        "sub_totals": 4363.911,
+        "totals": 27353.408,
+        "perc": 0.16
+      },
+      {
+        "year": 2012,
+        "variable": "methane",
+        "sub_totals": 3740.96,
+        "totals": 27353.408,
+        "perc": 0.14
+      },
+      {
+        "year": 2012,
+        "variable": "oil_co2",
+        "sub_totals": 6886.679,
+        "totals": 27353.408,
+        "perc": 0.25
+      },
+      {
+        "year": 2013,
+        "variable": "coal_co2",
+        "sub_totals": 12386.5,
+        "totals": 27466.961,
+        "perc": 0.45
+      },
+      {
+        "year": 2013,
+        "variable": "gas_co2",
+        "sub_totals": 4412.25,
+        "totals": 27466.961,
+        "perc": 0.16
+      },
+      {
+        "year": 2013,
+        "variable": "methane",
+        "sub_totals": 3718.59,
+        "totals": 27466.961,
+        "perc": 0.14
+      },
+      {
+        "year": 2013,
+        "variable": "oil_co2",
+        "sub_totals": 6949.621,
+        "totals": 27466.961,
+        "perc": 0.25
+      },
+      {
+        "year": 2014,
+        "variable": "coal_co2",
+        "sub_totals": 12252.231,
+        "totals": 27371.795,
+        "perc": 0.45
+      },
+      {
+        "year": 2014,
+        "variable": "gas_co2",
+        "sub_totals": 4394.505999999999,
+        "totals": 27371.795,
+        "perc": 0.16
+      },
+      {
+        "year": 2014,
+        "variable": "methane",
+        "sub_totals": 3772.4900000000002,
+        "totals": 27371.795,
+        "perc": 0.14
+      },
+      {
+        "year": 2014,
+        "variable": "oil_co2",
+        "sub_totals": 6952.567999999999,
+        "totals": 27371.795,
+        "perc": 0.25
+      },
+      {
+        "year": 2015,
+        "variable": "coal_co2",
+        "sub_totals": 11841.899,
+        "totals": 27125.081,
+        "perc": 0.44
+      },
+      {
+        "year": 2015,
+        "variable": "gas_co2",
+        "sub_totals": 4425.503,
+        "totals": 27125.081,
+        "perc": 0.16
+      },
+      {
+        "year": 2015,
+        "variable": "methane",
+        "sub_totals": 3773.21,
+        "totals": 27125.081,
+        "perc": 0.14
+      },
+      {
+        "year": 2015,
+        "variable": "oil_co2",
+        "sub_totals": 7084.469,
+        "totals": 27125.081,
+        "perc": 0.26
+      },
+      {
+        "year": 2016,
+        "variable": "coal_co2",
+        "sub_totals": 11400.238000000001,
+        "totals": 26787.956000000002,
+        "perc": 0.43
+      },
+      {
+        "year": 2016,
+        "variable": "gas_co2",
+        "sub_totals": 4536.012,
+        "totals": 26787.956000000002,
+        "perc": 0.17
+      },
+      {
+        "year": 2016,
+        "variable": "methane",
+        "sub_totals": 3717.38,
+        "totals": 26787.956000000002,
+        "perc": 0.14
+      },
+      {
+        "year": 2016,
+        "variable": "oil_co2",
+        "sub_totals": 7134.326,
+        "totals": 26787.956000000002,
+        "perc": 0.27
+      },
+      {
+        "year": 2017,
+        "variable": "coal_co2",
+        "sub_totals": 11429.009,
+        "totals": 27122.259,
+        "perc": 0.42
+      },
+      {
+        "year": 2017,
+        "variable": "gas_co2",
+        "sub_totals": 4662.818,
+        "totals": 27122.259,
+        "perc": 0.17
+      },
+      {
+        "year": 2017,
+        "variable": "methane",
+        "sub_totals": 3789.21,
+        "totals": 27122.259,
+        "perc": 0.14
+      },
+      {
+        "year": 2017,
+        "variable": "oil_co2",
+        "sub_totals": 7241.222,
+        "totals": 27122.259,
+        "perc": 0.27
+      },
+      {
+        "year": 2018,
+        "variable": "coal_co2",
+        "sub_totals": 11467.929,
+        "totals": 27609.266,
+        "perc": 0.42
+      },
+      {
+        "year": 2018,
+        "variable": "gas_co2",
+        "sub_totals": 4963.292,
+        "totals": 27609.266,
+        "perc": 0.18
+      },
+      {
+        "year": 2018,
+        "variable": "methane",
+        "sub_totals": 3873.8599999999997,
+        "totals": 27609.266,
+        "perc": 0.14
+      },
+      {
+        "year": 2018,
+        "variable": "oil_co2",
+        "sub_totals": 7304.1849999999995,
+        "totals": 27609.266,
+        "perc": 0.26
+      }
+    ]
+  }
+}
